@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body align="center">
+    <div>
+        <h1>Calculaor</h1>
+    </div>
+    <label>
+        <div>
+            <input type="text" id="code1">
+            <input type="text" id="code2">
+        </div>
+        <br><div>
+            <button id="a" onclick="ad()">Addition(+)</button>
+            <button id="b"onclick="su()">Subtraction(-)</button>
+            <button id="c"onclick="mu()">Multiplication(X)</button>
+            <button id="d"onclick="di()">Division(/)</button>
+        </div>
+        
+    </label>
+
+</body>
+
+</html>
+<script>
+    function ad() {
+        let numa = parseFloat(document.getElementById('code1').value);
+        let numb = parseFloat(document.getElementById('code2').value);
+        let result = numa + numb;
+        alert('ShowMessage: ' + result);
+    }
+
+    function su() {
+        let numa = parseFloat(document.getElementById('code1').value);
+        let numb = parseFloat(document.getElementById('code2').value);
+        let result = numa + numb;
+        alert('ShowMessage:' + result);
+    }
+
+    function mu() {
+        let numa = parseFloat(document.getElementById('code1').value);
+        let numb = parseFloat(document.getElementById('code2').value);
+        let result = numa + numb;
+        alert('ShowMessage:' + result);
+    }
+
+    function di() {
+        let numa = parseFloat(document.getElementById('code1').value);
+        let numb = parseFloat(document.getElementById('code2').value);
+        let result = numa + numb;
+        alert('ShowMessage:' + result);
+    }
+</script>
