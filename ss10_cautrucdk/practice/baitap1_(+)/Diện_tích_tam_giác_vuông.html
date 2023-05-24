@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>Tính diện tích tam giác vuông</h1>
+    </div><br>
+    <div>
+        <input type="text" id="valid1">
+        <input type="text" id="valid2">
+        <input type="button" id="id" style="width: 70px;" value="Click!" onclick="coder()">
+    </div>
+    <div>
+        <p id="result1"></p>
+    </div>
+</body>
+
+</html>
+<script>
+    function coder() {
+        var a = document.getElementById('valid1').value;
+        var b = document.getElementById('valid2').value;
+        var res = 1 / 2 * (a * b);
+        document.getElementById('result1').innerHTML = "Diện tích tam giác vuông cân là: " + res;
+    }
+</script>
