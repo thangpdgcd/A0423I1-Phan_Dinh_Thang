@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h2>Tính diện tích hình vuông</h2>
+    </div>
+    <div>
+        <input type="text" id="vip">
+        <input type="button" id="code" onclick="hack2()" style="width: 70px;" value="ClickOn!">
+    </div>
+    <div>
+        <p id="result">Result:</p>
+    </div>
+
+</body>
+
+</html>
+<script>
+    function hack2() {
+        var a = +document.getElementById('vip').value;
+        var res = a * a;
+        document.getElementById('result').innerHTML = "S : " + res;
+    }
+</script>
