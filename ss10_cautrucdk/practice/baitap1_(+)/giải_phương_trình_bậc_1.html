@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>Giải Phương Trình Bậc 1 </h1>
+    </div>
+    <div>
+        <input type="text" id="id1">
+        <input type="text" id="id2">
+        <input type="button" id="code" onclick="hacker()" style="width: 70px;" value="Click!">
+    </div>
+    <div>
+        <p id="result"></p>
+    </div>
+</body>
+
+</html>
+<script>
+    function hacker() {
+        var a = document.getElementById('id1').value;
+        var b = document.getElementById('id2').value;
+        if (a == 0) {
+            let res = 0 + b;
+            document.getElementById('result').innerHTML = "Phương Trình Vô nghiệm " + res;
+        } else if (b == 0) {
+            let res = a + 0;
+            document.getElementById('result').innerHTML = "Phương Trình Vô số nghiệm" + res;
+        } else {
+            let res = -b / a;
+            document.getElementById('result').innerHTML = "Phương trình có nghiệm duy nhất" + res;
+        }
+
+
+    }
+</script>
