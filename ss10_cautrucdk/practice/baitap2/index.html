@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <form>
+            <div>
+                <input type="text" name="DAY" id="day"> <input type="button" value="Count Number Day" onclick="valid1()" id="code1" style="width: 140px; margin-top: 20px;">
+            </div><br><br><br><br><br><br>
+        </form>
+    </div>
+    <b id="res"></b>
+
+</body>
+
+</html>
+<script>
+    function valid1() {
+        var month = parseInt(document.getElementById('day').value);
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.getElementById('res').innerHTML = +month + "có 31 ngày";
+                break;
+            case 2:
+                document.getElementById('res').innerHTML = +month + " có 29 ngày và ngày 28 ngày";
+                break;
+        }
+
+    }
+</script>
