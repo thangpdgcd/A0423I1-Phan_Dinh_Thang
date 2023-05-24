@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>Chuyển từ Met sang Feet</h1>
+    </div>
+    <div>
+        <input type="text" id="code">
+        <input type="button" id="id1" onclick="hack1()" style="width: 70px;" value="ClickMe!">
+    </div>
+    <div>
+        <p id="result"></p>
+    </div>
+
+</body>
+
+</html>
+<script>
+    function hack1() {
+        var m = +document.getElementById('code').value;
+        var res = m * 3.2808;
+        document.getElementById('result').innerHTML = "Độ Feet:" + res;
+    }
+</script>
