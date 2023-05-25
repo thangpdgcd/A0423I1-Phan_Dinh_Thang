@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="code1">
+        <input type="text" id="code2">
+        <input type="button" value="Click" style="width: 70px;" onclick="hacker()">
+    </div>
+    <div>
+        <p id="total"></p>
+    </div>
+</body>
+
+</html>
+<script>
+    function hacker() {
+
+        let a = document.getElementById('code1').value;
+        let b = document.getElementById('code2').value;
+        let res = a / b;
+        if (a % b == 0) {
+
+            document.getElementById('total').innerHTML = "a chia het cho b: " + res;
+        } else if (a % b != 0) {
+
+            document.getElementById('total').innerHTML = "a không chia hết cho b: " + res;
+        } else;
+    }
+</script>
