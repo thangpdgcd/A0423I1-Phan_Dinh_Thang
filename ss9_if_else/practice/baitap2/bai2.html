@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    input {
+        width: 160px;
+    }
+    
+    button {
+        width: 70px;
+        height: 20px;
+    }
+</style>
+
+<body>
+    <div>
+        <h2>Xét tuổi học sinh đủ/ không dủ điều kiện học lớp 10</h2>
+    </div><br>
+    <div>
+        <input type="text" id="id">
+        <button id="code" onclick="hack()">Click</button>
+    </div>
+    <div>
+        <p id="res"></p>
+    </div>
+</body>
+
+</html>
+<script>
+    function hack() {
+        let Age = document.getElementById('id').value;
+        let res = document.getElementById('res').value;
+
+        if (Age < 15) {
+            document.getElementById('res').innerHTML = "Học sinh không đủ diều kiện học lớp 10 ";
+        } else
+        if (Age => 15) {
+            document.getElementById('res').innerHTML = "Học sinh dủ điều kiện học lớp 10 ";
+        }
+    }
+</script>
