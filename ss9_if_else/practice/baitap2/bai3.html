@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button {
+        width: 120px;
+        height: 20px;
+    }
+</style>
+
+<body>
+    <div>
+        <h2>Nhập Số Nguyên Bất kì</h2>
+    </div>
+    <div>
+        <input type="text" id="code3">
+        <button onclick="showMessage()"> Click </button>
+    </div>
+    <div>
+        <p id="res"></p>
+    </div>
+
+</body>
+
+</html>
+<script>
+    function showMessage() {
+        let a = document.getElementById('code3').value;
+        let b = document.getElementById('res').value;
+        if (a < 0) {
+            document.getElementById('res').innerHTML = "số này nhỏ hơn 0 ";
+        } else if (a > 0) {
+            document.getElementById('res').innerHTML = "số này lớn hơn không";
+        }
+    }
+</script>
