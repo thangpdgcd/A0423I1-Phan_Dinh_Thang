@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>Khai báo</h1>
+    </div>
+    <div>
+        <input type="text" id="code" placeholder="Input">
+        <input type="button" style="margin-left: 15px; width: 120px; height: 20px; border-radius: 15px;" onclick="hack()" value="Click!">
+    </div>
+    <div>
+        <p id="result"></p>
+    </div>
+
+</body>
+
+</html>
+<script>
+    function hack() {
+        let i = 1;
+        let total = 0;
+        let num = document.getElementById('code').value;
+        for (; i <= num; i += 1) {
+            total = total + i;
+            document.getElementById('result').innerHTML = "This is the number:" + total;
+        }
+    }
+</script>

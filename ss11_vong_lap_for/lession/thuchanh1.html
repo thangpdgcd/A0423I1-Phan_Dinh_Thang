@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>Javascipt loops</h1>
+    </div>
+    <div>
+        <p id="demo"></p>
+    </div>
+    <div>
+        <div>
+            <p>Enter your Number</p>
+            <input type="text" id="code">
+            <input type="button" onclick="showMessage()" style="width: 120px; height: 20px; border-radius: 10px;" value="Click">
+        </div>
+        <p id="id1"></p>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function showMessage() {
+        let text = "";
+        let i;
+        for (i = 0; i < 5; i++) {
+            text += "The number is " + i + "<br>";
+        }
+        document.getElementById("demo").innerHTML = text;
+    }
+</script>
