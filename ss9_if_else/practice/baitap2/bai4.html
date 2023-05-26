@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="bai4.html" method="get">
+        <div>
+            <h1>Tìm giá trị lớn nhất</h1>
+        </div>
+        <div>
+            <input type="text" id="id1">
+            <input type="text" id="id2">
+            <input type="text" id="id3">
+            <input type="button" style="margin-left: 15px;width: 120px; height: 20px;" value="ClickOn!" onclick="showMessage()">
+        </div>
+        <div>
+            <p id="result"></p>
+        </div>
+    </form>
+</body>
+
+</html>
+<script>
+    function showMessage() {
+        let a = document.getElementById('id1').value;
+        let b = document.getElementById('id2').value;
+        let c = document.getElementById('id3').value;
+
+        if (a > b && a > c) {
+            document.getElementById('result').innerHTML = "GTLN: " + a;
+        } else if (b > a && b > c) {
+            document.getElementById('result').innerHTML = "GTLN: " + b;
+
+        } else if (c > a && c > b) {
+            document.getElementById('result').innerHTML = "GTLN: " + c;
+        } else;
+    }
+</script>
