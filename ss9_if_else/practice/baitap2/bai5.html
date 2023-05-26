@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="bai5.html" method="post">
+        <div>
+            <h1>Xếp hạng học lực của học sinh</h1>
+        </div>
+        <div>
+            <input type="text" id="id2" placeholder="Kiểm tra 1 tiết"><br>
+            <input type="text" id="id3" placeholder="Kiểm tra giữa kì"><br>
+            <input type="text" id="id4" placeholder="Kiểm tra cuối kì"><br>
+            <input type="button" onclick="showMessage()" style="width: 120px; height: 20px; border-radius: 10px;" value="Submit">
+        </div>
+        <div>
+            <p id="res"></p>
+        </div>
+    </form>
+</body>
+
+</html>
+<script>
+    function showMessage() {
+        let a = parseFloat(document.getElementById('id2').value);
+        let b = parseFloat(document.getElementById('id3').value);
+        let c = parseFloat(document.getElementById('id4').value);
+        let total = (a + b + c) * 2 / 3;
+
+        if (total > 8.5) {
+            let total = (a + b + c) * 2 / 3;
+            document.getElementById('res').innerHTML = "Học sinh giỏi";
+        } else if (total > 6.5) {
+            let total = (a + b + c) * 2 / 3;
+            document.getElementById('res').innerHTML = "Học sinh khá ";
+        } else if (total > 5.5) {
+            let total = (a + b + c) * 2 / 3;
+            document.getElementById('res').innerHTML = "học sinh trung bình";
+        } else if (total < 5.5) {
+            let total = (a + b + c) * 2 / 3;
+            document.getElementById('res').innerHTML = "học sinh yếu";
+        } else;
+    }
+</script>
