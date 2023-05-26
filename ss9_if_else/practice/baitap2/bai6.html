@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <dir>
+        <h1>Mức doanh thu bán hàng</h1>
+    </dir>
+    <div>
+        <input type="text" name="" id="id2" placeholder="Doanh số">
+        <input type="button" name="" onclick="code()" style="width: 120px; height: 20px; border-radius: 10px;" value="Submit">
+    </div>
+    <div>
+        <p id="total">Hoa Hồng </p>
+    </div>
+
+</body>
+
+</html>
+<script>
+    function code() {
+        let b = +document.getElementById('id2').value;
+        let res;
+        if (b <= 100) {
+            let res = b * 5 / 100;
+            document.getElementById('total').innerHTML = "số hoa hồng nhận được: " + res;
+        } else
+        if (b <= 300) {
+            let res = b * 10 / 100;
+            document.getElementById('total').innerHTML = "số hoa hồng nhận được: " + res;
+        } else if (b > 300) {
+            let res = b * 20 / 100;
+            document.getElementById('total').innerHTML = "số hoa hồng nhận được: " + res;
+        } else;
+    }
+</script>
