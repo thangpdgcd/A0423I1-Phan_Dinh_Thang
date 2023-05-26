@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h2>Tính cước phí điện thoại</h2>
+    </div>
+    <div>
+        <input type="text" id="id1" placeholder="Số điện">
+
+        <input type="button" onclick="showMessage()" style="margin-left: 10px; width: 120px; height: 20px; border-radius: 10px;" value="ClickOn!">
+    </div>
+    <div>
+        <p id="result">Tiền điện</p>
+    </div>
+
+</body>
+
+
+</html>
+<script>
+    function showMessage() {
+        let soDien = +document.getElementById('id1').value;
+        let tienDien;
+        let bac1 = 1678,
+            bac2 = 1734,
+            bac3 = 2014,
+            bac4 = 2536,
+            bac5 = 2834,
+            bac6 = 2927;
+        if (soDien < 0) {
+            document.getElementById('result').innerHTML = "vui lòng nhập lại, số điện không được nhỏ hơn không"
+        } else if (soDien <= 50) {
+            let tienDien = soDien * bac1;
+            document.getElementById('result').innerHTML = "Bạn đã dùng trong khoảng 0-50kwh số tiền phải trả là" + tienDien;
+        } else if (soDien <= 100) {
+            let tienDien = 50 * bac1 + ((soDien - 50) * bac2);
+            document.getElementById('result').innerHTML = "Bạn đã dùng trong khoảng 51-100kwh số tiền phải trả là" + tienDien;
+        } else if (soDien <= 200) {
+            let tienDien = 50 * bac1 + (50 * bac2) + ((soDien - 100) * bac3);
+            document.getElementById('result').innerHTML = "Bạn đã dùng trong khoảng 101-200kwh số tiền phải trả là" + tienDien;
+        } else if (soDien <= 300) {
+            let tienDien = 50 * bac1 + (50 * bac2) + (100 * bac3) + ((soDien - 200) * bac4);
+            document.getElementById('result').innerHTML = "Bạn đã dùng trong khoảng 201-300kwh số tiền phải trả là" + tienDien;
+        } else if (soDien <= 400) {
+            let tienDien = 50 * bac1 + (50 * bac2) + (100 * bac3) + (100 * bac4) + ((soDien - 300) * bac5);
+            document.getElementById('result').innerHTML = "Bạn đã dùng trong khoảng 301-400kwh số tiền phải trả là" + tienDien;
+        } else if (soDien > 400) {
+            let tienDien = 50 * bac1 + (50 * bac2) + (100 * bac3) + (100 * bac4) + (100 * bac5) + ((soDien - 400) * bac6);
+            document.getElementById('result').innerHTML = "Bạn đã dùng điện trên 400kwh số tiền phải trả là" + tienDien;
+        }
+    }
+</script>
