@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    h1 {
+        color: red;
+    }
+    
+    button {
+        width: 120px;
+        height: 20px;
+        margin-left: 20px;
+        border-radius: 10px;
+    }
+    
+    p {
+        color: blue;
+        size: 60px;
+    }
+</style>
+
+<body align="center">
+    <div>
+        <h1>Screen Login</h1>
+    </div>
+    <div>
+        <table>
+            <input type="text" id="id">
+            <button onclick="showMessage()" onmouseover="mouseover()" onmouseout="mouseout() " id="hack">Submit</button>
+            <div>
+                <p id="result"></p>
+            </div>
+        </table>
+    </div>
+</body>
+
+</html>
+<script>
+    function showMessage() {
+        var a = document.getElementById("id").value;
+        var message = document.getElementById("result").value;
+        if (a == 'Employee') {
+            document.getElementById("result").innerHTML = "Hello";
+        } else if (a == 'Director') {
+            document.getElementById("result").innerHTML = "Greetings";
+        } else {
+            document.getElementById("result").innerHTML = "Error Screen";
+        }
+    }
+
+    function mouseover() {
+        var b = document.getElementById("hack").style.color = "blue";
+    }
+
+    function mouseout() {
+        var b = document.getElementById("hack").style.color = "black";
+    }
+</script>
