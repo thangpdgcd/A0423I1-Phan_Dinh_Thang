@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <form action="http://127.0.0.1:5500/thuchanh5/thuchanh1,3.html" method="get">
+            <div>
+                <h1>If Else Swap Switch Key</h1>
+            </div>
+            <div>
+                <input type="text" id="id2">
+                <input type="button" id="code" onclick="hack1()" style=" margin-left: 20px; width: 120px; height: 20px; border-radius: 20px;" value="Click!">
+            </div>
+            <div>
+                <p id="result"></p>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
+<script>
+    function hack1() {
+        var value = document.getElementById('id2').value;
+        var result = document.getElementById('result').value;
+        switch (value) {
+            case 0:
+            case 1:
+                document.getElementById("reusult").innerHTML = +value;
+                break;
+            case -1:
+            case -2:
+                document.getElementById("result").innerHTML = +value;
+                break;
+            default:
+                document.getElementById("result").innerHTML = +value;
+                break;
+        }
+    }
+</script>
