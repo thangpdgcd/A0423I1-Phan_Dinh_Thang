@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        background-color: antiquewhite;
+    }
+    
+    h1 {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: brown;
+    }
+    
+    button {
+        width: 120px;
+        height: 20 px;
+        border-radius: 15px;
+        background-color: aqua;
+    }
+</style>
+
+<body>
+    <div>
+        <h1>Fibonacci % 5</h1>
+    </div><br>
+    <div>
+        <input type="text" name="" id="id">
+        <button onclick="showMessage()" onmouseover="mouseover()" onmouseout="mouseout()" id="button"> Click</button>
+    </div><br>
+    <div>
+        <p id="res"></p>
+    </div>
+
+</body>
+
+</html>
+<script>
+    // fn=f(n-1)+f(n-2) ->n>2;
+    function showMessage() {
+        let Fn;
+        let F1;
+        let F2;
+        let chia5 = ""
+        let fibonacci = "";
+        for (let i = 0; i < 20; i++) {
+            if (i == 0) {
+                Fn = 1;
+                F2 = 1;
+                fibonacci += Fn + " "
+            } else {
+                Fn = F1 + F2;
+                F1 = F2;
+                F2 = Fn;
+                fibonacci += Fn + " "
+                document.getElementById("id").innerHTML = (i + " = " + Fn);
+                if (Fn % 5 == 0) {
+                    chia5 = Fn;
+                    break;
+                }
+            }
+        }
+        document.getElementById('res').innerHTML = "số chia hết cho 5 trong dãy là " + chia5;
+    }
+
+
+    function mouseover() {
+        var colorover = document.getElementById("button").style.color = "red    ";
+    }
+
+    function mouseout() {
+        var colorout = document.getElementById("button").style.color = "black";
+    }
+</script>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the Number</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            background-color: aliceblue;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .input-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            width: 200px;
+            margin-right: 10px;
+        }
+        
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #3e8e41;
+        }
+        
+        #help-text {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Guess the Number</h1>
+    <p>I am thinking of a number between 1 and 100.</p>
+    <p>Can you guess what it is?</p>
+    <div class="input-container">
+        <input type="text" id="guess-input" />
+        <button id="guess-btn">Guess</button>
+    </div>
+    <p id="help-text"></p>
+    <script>
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+        let guessCount = 0;
+
+        const guessInput = document.getElementById("guess-input");
+        const guessButton = document.getElementById("guess-btn");
+        const helpText = document.getElementById("help-text");
+
+        function checkGuess() {
+            const userGuess = Number(guessInput.value);
+            guessCount++;
+
+            if (userGuess === randomNumber) {
+                helpText.textContent = `Congratulations! You guessed the number in ${guessCount} tries.`;
+                guessInput.disabled = true;
+                guessButton.disabled = true;
+            } else if (guessCount === 10) {
+                helpText.textContent = `Sorry, you did not guess the number in time. The number was ${randomNumber}.`;
+                guessInput.disabled = true;
+                guessButton.disabled = true;
+            } else if (userGuess < randomNumber) {
+                helpText.textContent = "Too low. Guess again.";
+            } else if (userGuess > randomNumber) {
+                helpText.textContent = "Too high. Guess again.";
+            }
+
+            guessInput.value = "";
+            guessInput.focus();
+        }
+
+        guessButton.addEventListener("click", checkGuess);
+        guessInput.addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                guessButton.click();
+            }
+        });
+    </script>
+</body>
+
+</html>
