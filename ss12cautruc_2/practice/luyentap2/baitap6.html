@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
+<script>
+    function tinhLaiNganHang(tienBanDau, soThangChoVay, laiXuatHangThang) {
+        // Chuyển đổi lãi suất hàng tháng thành lãi suất hàng năm
+        let laiXuatNam = laiXuatHangThang * 12;
+
+        // Tính số tiền lãi sau số tháng cho vay
+        let tongTienLai = tienBanDau * Math.pow(1 + laiXuatNam / 100, soThangChoVay / 12) - tienBanDau;
+
+        // Trả về số tiền lãi tương ứng
+        return tongTienLai.toFixed(2);
+    }
+
+    // Ví dụ sử dụng
+    let tienBanDau = 10000000; // 10 triệu đồng
+    let soThangChoVay = 12; // 1 năm
+    let laiXuatHangThang = 0.6; // 0.6% hàng tháng
+
+    let tienLai = tinhLaiNganHang(tienBanDau, soThangChoVay, laiXuatHangThang);
+    console.log("Số tiền lãi là: " + tienLai + " đồng");
+</script>
