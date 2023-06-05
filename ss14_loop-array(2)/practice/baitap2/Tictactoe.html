@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+    
+    td {
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+        text-align: center;
+        font-size: 30px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <table id="board">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <div id="message"></div>
+</body>
+
+</html>
+<script>
+    var player = "X";
+    var board = [
+        [".", ".", "."],
+        [".", ".", "."],
+        [".", ".", "."]
+    ];
+
+    function drawBoard() {
+        for (var i = 0; i < 3; i++) {
+            for (var j = 0; j < 3; j++) {
+                document.getElementById("board").rows[i].cells[j].innerHTML = board[i][j];
+            }
+        }
+    }
+
+    function checkWin() {
+        var symbols = ["X", "O"];
+        for (var s = 0; s < symbols.length; s++) {
+            var symbol = symbols[s];
+            // Check rows
+            for (var i = 0; i < 3; i++) {
+                if (board[i][0] == symbol && board[i][1] == symbol && board[i][2] == symbol) {
+                    return symbol;
+                }
+            }
+            // Check columns
+            for (var j = 0; j < 3; j++) {
+                if (board[0][j] == symbol && board[1][j] == symbol && board[2][j] == symbol) {
+                    return symbol;
+                }
+            }
+            // Check diagonals
+            if (board[0][0] == symbol && board[1][1] == symbol && board[2][2] == symbol) {
+                return symbol;
+            }
+            if (board[0][2] == symbol && board[1][1] == symbol && board[2][0] == symbol) {
+                return symbol;
+            }
+        }
+        // No winner yet
+        return null;
+    }
+
+    function handleClick(row, col) {
+        if (board[row][col] == ".") {
+            board[row][col] = player;
+            drawBoard();
+            var winner = checkWin();
+            if (winner != null) {
+                document.getElementById("message").innerHTML = winner + " wins!";
+            } else {
+                player = (player == "X" ? "O" : "X");
+            }
+        }
+    }
+
+    drawBoard();
+    document.querySelectorAll("#board td").forEach(function(cell) {
+        cell.addEventListener("click", function() {
+            var row = this.parentNode.rowIndex;
+            var col = this.cellIndex;
+            handleClick(row, col);
+        });
+    });
+</script>
