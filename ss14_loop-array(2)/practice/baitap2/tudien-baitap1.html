@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="" id="code">
+        <input type="button" name="" id="" onclick="search() " style="margin-left: 15px; width: 120px; height: 20px; border-radius: 20px; " value="Search">
+    </div>
+    <div>
+        <p id="res"></p>
+    </div>
+
+</body>
+
+</html>
+<script>
+    function search(word) {
+        let EngLish = ["hello", "world", "goodbye", "love"];
+        let VietNam = ["xin chào", "thế giới", "tạm biệt", "tình yêu"];
+        let index = EngLish.indexOf(word);
+        if (index !== -1) {
+            document.getElementById("res").innerHTML = (VietNam[index]);
+        } else {
+            document.getElementById("res").innerHTML = "Không tìm thấy từ này.";
+        }
+
+    }
+</script>
