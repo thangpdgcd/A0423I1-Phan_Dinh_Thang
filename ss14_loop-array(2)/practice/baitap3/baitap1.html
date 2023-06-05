@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+    <script>
+        // Bài 1- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử.
+        // Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.
+        let array = Array(10);
+        let index = 0;
+        let a = 0;
+        let b = 0;
+        for (let i = 1; i <= array.length; i++) {
+            let inputNum = prompt('Nhập số nguyên thứ ' + i);
+            array[index] = inputNum;
+            index++;
+        }
+        alert('Mảng bạn nhập : ' + array);
+        for (index = 0; index < array.length; index++) {
+            if (array[index] < 10) {
+                a++;
+            } else {
+                b++;
+            }
+        }
+        alert('Có ' + a + ' số nguyên bé hơn  10');
+        alert('Có ' + b + ' số nguyên lớn hơn hoặc bằng 10');
+    </script>
+</body>
+
+</html>
