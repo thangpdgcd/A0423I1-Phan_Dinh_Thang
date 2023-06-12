@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    h1 {
+        color: brown;
+    }
+    
+    button {
+        width: 120px;
+        height: 20px;
+        border-radius: 20px;
+    }
+</style>
+
+<body>
+    <div>
+        <h1 align="center">GTNN</h1>
+    </div>
+    <input type="text" name="" id="code1">
+    <input type="text" name="" id="code2">
+    <input type="text" name="" id="code3"><br><br>
+    <button onclick="showMessage()">Click!</button>
+    <div>
+        <p id="result"></p>
+    </div>
+</body>
+
+</html>
+<script>
+    function showMessage() {
+        function tinh(nhap) {
+            let min = num1 = document.getElementById("code1").value;
+            let num2 = document.getElementById("code2").value
+            let num3 = document.getElementById("code3").value
+            if (num2 < min) {
+                min = num2;
+            }
+            if (num3 < min) {
+                min = num3;
+            }
+            return min;
+        }
+        min = tinh();
+        document.getElementById("result").innerHTML = "Result: " + min
+    }
+</script>

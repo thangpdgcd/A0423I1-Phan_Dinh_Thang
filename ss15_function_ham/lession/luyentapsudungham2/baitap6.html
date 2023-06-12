@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>kiểm tra nguyên dương </h1>
+    </div>
+
+</body>
+
+</html>
+<script>
+    function nhapso(nhap) {
+        if (typeof num !== 'number') {
+            return false;
+        }
+
+        if (!Number.isInteger(num)) {
+            return false;
+        }
+
+        if (num <= 0) {
+            return false;
+        }
+
+        return true;
+    }
+    console.log(nhapso(15)); // true
+    console.log(nhapso(-5)); // false
+    console.log(nhapso(3.14)); // false
+</script>

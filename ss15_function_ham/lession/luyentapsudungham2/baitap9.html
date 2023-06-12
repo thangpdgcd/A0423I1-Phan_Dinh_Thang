@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    function countChar(arr, char) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === char) {
+                count++;
+            }
+        }
+
+        return count > 0 ? count : -1;
+    }
+
+    function countChar(arr, char) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === char) {
+                count++;
+            }
+        }
+
+        return count > 0 ? count : -1;
+    }
+    let arr = ['a', 'b', 'c', 'd', 'e', 'e', 'e'];
+    let char = 'e';
+    console.log(countChar(arr, char)); // 3
+
+    char = 'f';
+    console.log(countChar(arr, char)); // -1
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>Swap</h1>
+    </div>
+
+</body>
+
+</html>
+<script>
+    function swap(a, b) {
+        [a, b] = [b, a]
+        return [a, b]
+    }
+    let x = 10;
+    let y = 20;
+    console.log("before: x= ", x, "y=", y);
+    [x, y = swap(x, y)]
+    console.log("After swapping: x =", x, ", y =", y);
+</script>

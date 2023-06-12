@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        background-color: beige;
+    }
+    
+    h1 {
+        color: brown;
+    }
+    
+    input {
+        width: 40px;
+        height: 20px;
+    }
+    
+    button {
+        width: 120px;
+        height: 20px;
+        border-radius: 20px;
+    }
+</style>
+
+<body>
+    <div>
+        <h1 align="center"> Tinh Dien Tich && Chu Vi Hinh Tron</h1>
+    </div><br>
+    <div>
+        <input type="text" id="dientich">
+        <button id="hack1" onclick="showMessage()" onmouseover="mouseover()" onmouseout="mouseout()"> Click!</button>
+    </div><br><br><br>
+    <div>
+        <input type="text" id="chuvi">
+        <button id="hack2" onclick="Hack()" onmouseover="mouseover1()" onmouseout="mouseout1()">Click!</button>
+    </div>
+
+</body>
+
+</html>
+<script>
+    function showMessage() {
+        function tinhdientichhinhtron(r) {
+            r = document.getElementById("dientich").value;
+            var result = Math.PI * r * r
+            return result;
+        }
+        result = 0;
+        result = tinhdientichhinhtron()
+        document.write("Dien Tich Hinh Tron: " + result)
+    }
+
+    function Hack() {
+        function chuvihinhtron(r1) {
+            r1 = document.getElementById("chuvi").value;
+            var tong = r1 * r1 * Math.PI
+            return tong;
+        }
+        tong = 0;
+        tong = chuvihinhtron();
+        document.write("Chu Vi Hinh Tron:" + tong)
+    }
+
+    function mouseover() {
+        document.getElementById("hack1").style.color = "red"
+
+    }
+
+    function mouseover1() {
+        document.getElementById("hack2").style.color = "red"
+
+    }
+
+    function mouseout1() {
+        document.getElementById("hack2").style.color = "black"
+
+    }
+
+    function mouseout() {
+        document.getElementById("hack1").style.color = "black"
+
+    }
+</script>
