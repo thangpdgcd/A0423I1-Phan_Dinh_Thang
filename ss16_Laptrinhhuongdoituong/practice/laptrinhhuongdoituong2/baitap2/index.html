@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+override tostring() { return :$ `name`:${name} }.
+
+</html>
+<script>
+    class Apple {
+        weigth
+        constructor(weigth) {
+            this.weigth = weigth;
+        }
+        decrease() {
+
+        }
+        isEmpty() {
+
+            return this.weigth <= 0;
+
+        }
+
+        getWeight() {
+            return this.weigth--;
+        }
+    }
+    class Human {
+        constructor(name, gender, weigth) {
+            this.name = name
+            this.gender = gender
+            this.weigth = weigth
+        }
+
+        isMale() {
+            return this.gender;
+        }
+        checkWeightApple(apple) {
+            return apple.getWeight();
+
+        }
+        eat() {
+            if (apple.getWeight() > 0) {
+                this.weigth++;
+                apple.decrease();
+            } else {
+
+            }
+
+        }
+        say(val) {
+            console.log(val)
+        }
+
+    }
+    const apple = new Apple();
+    const adam = new Human("adam", true, 70);
+    const eva = new Human("eva", false, 50)
+    adam.say("Would you like go to garden");
+    eva.say("yes");
+    adam.say("that apple is beautiful")
+    eva.say("do you want try eat apple");
+    console.log("before eat apple" + adam.weigth)
+    console.log(" apple" + apple.weigth)
+    adam.eat(apple);
+    console.log(" after eat apple, adam weight" + apple.weigth)
+    console.log("after apple weight" + apple.weigth);;
+
+
+    adam.say("Are you a Female");
+    eva.say(eva.isMale());
+
+    console.log(adam.checkWeightApple(apple));
+</script>
