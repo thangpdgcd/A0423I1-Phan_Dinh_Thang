@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Mobile {
+            constructor() {
+                this.isOn = false;
+                this.batteryLevel = 100;
+                this.draftMessage = "";
+                this.inbox = [];
+                this.sentMessages = [];
+            }
+
+            checkStatus() {
+                return this.isOn;
+            }
+
+            turnOn() {
+                if (!this.checkStatus()) {
+                    this.isOn = true;
+                    console.log("Mobile phone is turned on.");
+                } else {
+                    console.log("Mobile phone is already on.");
+                }
+            }
+
+            turnOff() {
+                if (this.checkStatus()) {
+                    this.isOn = false;
+                    console.log("Mobile phone is turned off.");
+                } else {
+                    console.log("Mobile phone is already off.");
+                }
+            }
+
+            chargeBattery() {
+                if (this.batteryLevel < 100) {
+                    this.batteryLevel += 10;
+                    console.log(`Battery level: ${this.batteryLevel}%`);
+                } else {
+                    console.log("Battery is fully charged.");
+                }
+            }
+
+            composeMessage(message) {
+                if (this.checkStatus()) {
+                    this.draftMessage = message;
+                    this.batteryLevel--;
+                    console.log(`Draft message: ${this.draftMessage}`);
+                } else {
+                    console.log("Mobile phone is turned off.");
+                }
+            }
+
+            receiveMessage(message) {
+                if (this.checkStatus()) {
+                    this.inbox.push(message);
+                    this.batteryLevel--;
+                    console.log(`Received message: ${message}`);
+                } else {
+                    console.log("Mobile phone is turned off.");
+                }
+            }
+
+            sendMessage(message, mobile) {
+                if (this.checkStatus()) {
+                    mobile.receiveMessage(message);
+                    this.sentMessages.push(message);
+                    this.batteryLevel--;
+                    console.log(`Sent message: ${message}`);
+                } else {
+                    console.log("Mobile phone is turned off.");
+                }
+            }
+
+            viewInbox() {
+                if (this.checkStatus()) {
+                    console.log(`Inbox: ${this.inbox}`);
+                    this.batteryLevel--;
+                } else {
+                    console.log("Mobile phone is turned off.");
+                }
+            }
+
+            viewSentMessages() {
+                if (this.checkStatus()) {
+                    console.log(`Sent messages: ${this.sentMessages}`);
+                    this.batteryLevel--;
+                } else {
+                    console.log("Mobile phone is turned off.");
+                }
+            }
+        }
+
+        let nokia = new Mobile();
+        let iphone = new Mobile();
+
+        nokia.composeMessage("Hello, iPhone!");
+        nokia.sendMessage(nokia.draftMessage, iphone);
+        iphone.viewInbox();
+    </script>
+
+</body>
+
+</html>
